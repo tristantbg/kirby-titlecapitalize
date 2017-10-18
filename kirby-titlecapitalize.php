@@ -37,6 +37,11 @@ field::$methods['titleCapitalize'] = function($field)
     // Apostrophe replace
     $newtitle = str_replace('`', '’', $newtitle);
 
+    //Special replacement
+    $newtitle = preg_replace('/Ss(\d{1,4})/', 'SS\1', $newtitle);
+    $newtitle = preg_replace('/Aw(\d{1,4})/', 'AW\1', $newtitle);
+    $newtitle = preg_replace('/Fw(\d{1,4})/', 'FW\1', $newtitle);
+
     return $newtitle;
     
 };
